@@ -1,0 +1,15 @@
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.csproj.AssemblyReference.cache
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.AssemblyInfoInputs.cache
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.AssemblyInfo.cs
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.csproj.CoreCompileInputs.cache
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/bin/Debug/net5.0/QuestionGame.deps.json
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/bin/Debug/net5.0/QuestionGame.runtimeconfig.json
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/bin/Debug/net5.0/QuestionGame.runtimeconfig.dev.json
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/bin/Debug/net5.0/QuestionGame.dll
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/bin/Debug/net5.0/ref/QuestionGame.dll
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/bin/Debug/net5.0/QuestionGame.pdb
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.dll
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/ref/QuestionGame.dll
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.pdb
+/Users/danielrosenzweig/Documents/GitHub/QuestionGame/obj/Debug/net5.0/QuestionGame.genruntimeconfig.cache

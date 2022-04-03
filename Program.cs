@@ -14,6 +14,7 @@ namespace QuestionGame
 
 
 
+
         //Display the question to the user
         //Loop through each answer and display it
         //Using the GetValidAnswer method get and return the users response
@@ -25,30 +26,47 @@ namespace QuestionGame
         public static string MakeUserSmart(string prompt)
         {
 
-            List<string> YESRESPONSES = new List<string>();
-            YESRESPONSES = File.ReadAllLines("YES-Responses.txt").ToList();
-
             List<string> NORESPONSES = new List<string>();
-            NORESPONSES = File.ReadAllLines("NO-Responses.txt").ToList();
+
+            NORESPONSES.Add("GENIUS!");
+            NORESPONSES.Add("YOU'RE JUST TOO SMART");
+
+
+
+            List<string> YESRESPONSES = new List<string>();
+
+            YESRESPONSES.Add("YOU'RE WRONG");
+            YESRESPONSES.Add("TRY AGAIN");
+
+
 
             Console.WriteLine($"{prompt}");
             string input = Console.ReadLine().ToLower();
-            if (input != "no")
+            if (input == "no")
             {
-                Console.Error.WriteLine($"{NORESPONSES}");
+                Console.WriteLine($"{NORESPONSES}");
             }
             else if (input == "yes")
             {
                 Console.WriteLine($"{YESRESPONSES}");
             }
 
-            while (input != "no" || input != "yes");
             do
             {
-                Console.WriteLine("INVALID ANSWER");
-                Console.WriteLine("Ill ask again. Do you think Austin Ransford is cool. ANSWER YES OR NO");
+                Console.Error.WriteLine("try again");
+                Console.WriteLine($"{prompt}");
+                string input1 = Console.ReadLine().ToLower();
+                if (input1 == "no")
+                {
+                    Console.WriteLine($"{NORESPONSES}");
+                }
+                else if (input1 == "yes")
+                {
+                    Console.WriteLine($"{YESRESPONSES}");
+                }
             }
-        
+            while (input != "yes");
+
             return input;
 
         }

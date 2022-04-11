@@ -30,42 +30,44 @@ namespace QuestionGame
 
             NORESPONSES.Add("GENIUS!");
             NORESPONSES.Add("YOU'RE JUST TOO SMART");
+            NORESPONSES.Add("CORRECT");
 
 
 
             List<string> YESRESPONSES = new List<string>();
 
             YESRESPONSES.Add("YOU'RE WRONG");
-            YESRESPONSES.Add("TRY AGAIN");
+            YESRESPONSES.Add("INCORRECT");
 
+            string Response;
+            Random generator = new Random();
+
+            int YESIndex = generator.Next(0, YESRESPONSES.Count);
+            string randomYESRESPONSE = YESRESPONSES[YESIndex];
+
+            Response = $"{randomYESRESPONSE}";
+
+            string Response1;
+            Random generator1 = new Random();
+
+            int NOIndex = generator.Next(0, NORESPONSES.Count);
+            string randomNORESPONSE = NORESPONSES[NOIndex];
+
+            Response1 = $"{randomNORESPONSE}";
 
 
             Console.WriteLine($"{prompt}");
             string input = Console.ReadLine().ToLower();
+
             if (input == "no")
             {
-                Console.WriteLine($"{NORESPONSES}");
+                Console.WriteLine($"{randomNORESPONSE}");
             }
             else if (input == "yes")
             {
-                Console.WriteLine($"{YESRESPONSES}");
+                Console.WriteLine($"{randomYESRESPONSE}");
             }
 
-            do
-            {
-                Console.Error.WriteLine("try again");
-                Console.WriteLine($"{prompt}");
-                string input1 = Console.ReadLine().ToLower();
-                if (input1 == "no")
-                {
-                    Console.WriteLine($"{NORESPONSES}");
-                }
-                else if (input1 == "yes")
-                {
-                    Console.WriteLine($"{YESRESPONSES}");
-                }
-            }
-            while (input != "yes");
 
             return input;
 

@@ -16,12 +16,11 @@ namespace QuestionGame
 
 
         //Display the question to the user
-        //Loop through each answer and display it
-        //Using the GetValidAnswer method get and return the users response
+        //Ask question and once you get the answer display the response
         /// <summary>
-        /// This displays the question and all of the answers and prompts the user to choose one the answers and returns the answer.
+        /// Ask question and once you get the answer display the response
         /// </summary>
-        /// <param name="question">The question that is being asked</param>
+        /// <param name="prompt">The question that is being asked</param>
         /// <returns>It returns the answer to the player</returns>
         public static string MakeUserSmart(string prompt)
         {
@@ -54,20 +53,23 @@ namespace QuestionGame
             string randomNORESPONSE = NORESPONSES[NOIndex];
 
             Response1 = $"{randomNORESPONSE}";
-
-
-            Console.WriteLine($"{prompt}");
-            string input = Console.ReadLine().ToLower();
-
-            if (input == "no")
+            string input;
+            do
             {
-                Console.WriteLine($"{randomNORESPONSE}");
-            }
-            else if (input == "yes")
-            {
-                Console.WriteLine($"{randomYESRESPONSE}");
-            }
+                Console.WriteLine($"{prompt}");
+                input = Console.ReadLine().ToLower();
 
+                if (input == "no")
+                {
+                    Console.WriteLine($"{randomNORESPONSE}");
+                }
+                else if (input == "yes")
+                {
+                    Console.WriteLine($"{randomYESRESPONSE}");
+                }
+                if (input == null) throw new Exception("Please answer yes or no");
+            }
+            while((input == "yes" || input == "no") == false);
 
             return input;
 

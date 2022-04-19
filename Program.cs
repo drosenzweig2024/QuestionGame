@@ -8,7 +8,7 @@ namespace QuestionGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Do you think Austin Ransford is cool");
+            Console.WriteLine("Do you think Bob is cool");
             MakeUserSmart("Enter yes or no");
         }
 

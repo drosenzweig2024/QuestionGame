@@ -24,7 +24,8 @@ namespace QuestionGame
         /// <returns>It returns the answer to the player</returns>
         public static string MakeUserSmart(string prompt)
         {
-
+            if(prompt == null) throw new Exception("The prompt cant be null");
+            
             List<string> NORESPONSES = new List<string>();
 
             NORESPONSES.Add("GENIUS!");
@@ -59,6 +60,8 @@ namespace QuestionGame
                 Console.WriteLine($"{prompt}");
                 input = Console.ReadLine().ToLower();
 
+                
+
                 if (input == "no")
                 {
                     Console.WriteLine($"{randomNORESPONSE}");
@@ -67,9 +70,10 @@ namespace QuestionGame
                 {
                     Console.WriteLine($"{randomYESRESPONSE}");
                 }
-                if (input == null) throw new Exception("Please answer yes or no");
+               
             }
             while((input == "yes" || input == "no") == false);
+
 
             return input;
 

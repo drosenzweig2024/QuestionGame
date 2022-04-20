@@ -14,13 +14,13 @@ The purpose of the program is to give the user a trick question and make them la
 
 ### 3a ii.
 
-The project displays the question in which then the user answers and depending on the user's answer they recieve a response.
+The project displays the question in which the user answers and depending on the user's answer they receive a response.
 
 
 
 ### 3a iii.
 
-The input is yes or no and the output is a random response
+The user uses the keyboard to enter an input and the program displays an output as a response to the input
 
 ## 3b
 
@@ -34,11 +34,11 @@ The first program code segment must show how data have been stored in the list.
 
 ```csharp
 
-             string Response1;
-            Random generator1 = new Random();
+    List<string> NORESPONSES = new List<string>();
 
-            int NOIndex = generator.Next(0, NORESPONSES.Count);
-            string randomNORESPONSE = NORESPONSES[NOIndex];
+            NORESPONSES.Add("GENIUS!");
+            NORESPONSES.Add("YOU'RE JUST TOO SMART");
+            NORESPONSES.Add("CORRECT");
 ```
 
 ### 3b ii.
@@ -48,22 +48,8 @@ such as creating new data from the existing data or accessing multiple elements
 in the list, as part of fulfilling the program's purpose.
 
 ```csharp
- do
-            {
-                Console.WriteLine($"{prompt}");
-                input = Console.ReadLine().ToLower();
-
-                if (input == "no")
-                {
-                    Console.WriteLine($"{randomNORESPONSE}");
-                }
-                else if (input == "yes")
-                {
-                    Console.WriteLine($"{randomYESRESPONSE}");
-                }
-                if (input == null) throw new Exception("Please answer yes or no");
-            }
-            while((input == "yes" || input == "no") == false);
+        int NOIndex = generator.Next(0, NORESPONSES.Count);
+        string randomNORESPONSE = NORESPONSES[NOIndex];
 ```
 
 ### 3b iii.
@@ -72,7 +58,7 @@ Then provide a written response that does all three of the following:
 
 Identifies the name of the list being used in this response
 
-The list is stored in the variable randomNORESPONSE
+The list is stored in the variable NORESPONSE
 
 ### 3b iv.
 
@@ -80,9 +66,7 @@ The list is stored in the variable randomNORESPONSE
 Responses to the input "no" are stored in the list
 
 ### 3b v.
-
-It would be impossible to run the code without this list because there would be no output/random response to make the user laugh
-
+The list manages complexity by being able to storing all my responses in one variable that I can use throughout my code and generating a random index that can be used to select a response to display to the user. Without the list "NORESPONSE" I would have to manually add all the responses using a bunch of if and else statements. 
 ## 3c.
 
 Capture and paste two program code segments you developed during the
@@ -100,7 +84,8 @@ The first program code segment must be a student-developed procedure that:
 ```csharp
  public static string MakeUserSmart(string prompt)
         {
-
+            if(prompt == null) throw new Exception("The prompt cant be null");
+            
             List<string> NORESPONSES = new List<string>();
 
             NORESPONSES.Add("GENIUS!");
@@ -135,6 +120,8 @@ The first program code segment must be a student-developed procedure that:
                 Console.WriteLine($"{prompt}");
                 input = Console.ReadLine().ToLower();
 
+                
+
                 if (input == "no")
                 {
                     Console.WriteLine($"{randomNORESPONSE}");
@@ -143,15 +130,17 @@ The first program code segment must be a student-developed procedure that:
                 {
                     Console.WriteLine($"{randomYESRESPONSE}");
                 }
-                if (input == null) throw new Exception("Please answer yes or no");
+               
             }
             while((input == "yes" || input == "no") == false);
+
 
             return input;
 
         }
 
     }
+
 ```
 
 ### 3c ii.
@@ -166,7 +155,7 @@ The second program code segment must show where your student-developed procedure
 
 Describes in general what the identified procedure does and how it contributes to the overall functionality of the program.
 
-When this method is called it asks the question and allows the user to input the answers "yes" or "no". Depending on the answer the program then outputs a random response to make the user laugh.
+When this method is called it asks the question and allows the user to input the answers "yes" or "no". Depending on the answer the program then outputs a random response to make the user laugh. The procedure contributes to the functionality of the program by allowing the user to input an answer to the question and outputing a response to the user.
 
 ### 3c iv.
 
@@ -174,6 +163,7 @@ Explains in detailed steps how the algorithm implemented in the identified proce
 
 **TODO: In English, explain step by step what your procedure does. Be sure to use the word `Selection` and `Iteration` to explain what it does.**
 
+0. Validate that the prompt is not null
 1. The procedure asks the question
 2. the procedure allows the user to input an answer
 3. If yes the program displays a random yes response
@@ -190,11 +180,12 @@ Provide a written response that does all three of the following:
 Describes two calls to the procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.
 
 First call:
-if (input == null) throw new Exception
+MakeUserSmart(null);
+
 
 **TODO: Complete this section**
 
-Second call: if (input == "no")
+Second call: MakeUserSmart("Enter yes or no");
 
 **TODO: Complete this section**
 
@@ -202,20 +193,20 @@ Second call: if (input == "no")
 
 Describes what condition(s) is being tested by each call to the procedure
 
-Condition(s) tested by the first call: It tests that the answer needs to be yes or no
- 
+Condition(s) tested by the first call: It tests that an invalid prompt is handle appropriately
+
 **TODO: Complete this section**
 
-Condition(s) tested by the second call: It checks if the input is no
+Condition(s) tested by the second call: This tests that a valid prompt is displayed to the user
 
 **TODO: Complete this section**
 
 ### 3d iii.
 
-Result of the first call: "Please answer yes or no"
+Result of the first call: "The prompt cant be null"
 
 **TODO: Complete this section**
 
-Result of the second call: randomNORESPONSE
+Result of the second call: "Enter yes or no"
 
 **TODO: Complete this section**
